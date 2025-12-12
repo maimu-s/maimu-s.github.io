@@ -28,10 +28,10 @@ export interface TwitchVideo {
 // チャンネル設定
 const TWITCH_CHANNEL_NAME = import.meta.env.VITE_TWITCH_CHANNEL_NAME || 'suzunemaimu';
 
-// RSS URL（開発環境ではプロキシ経由、本番環境では直接アクセス）
+// RSS URL（開発環境ではプロキシ経由、本番環境ではCORSプロキシ経由）
 const RSS_URL = import.meta.env.DEV
     ? `/api/twitch-rss/vod/${TWITCH_CHANNEL_NAME}`
-    : `https://twitchrss.appspot.com/vod/${TWITCH_CHANNEL_NAME}`;
+    : `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://twitchrss.appspot.com/vod/${TWITCH_CHANNEL_NAME}`)}`;
 
 // キャッシュ設定
 const CACHE_KEY = 'twitch_rss_cache';
