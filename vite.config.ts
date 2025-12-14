@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   root: 'src',
   envDir: '..',  // プロジェクトルートの.envを読み込む
-  base: '/homepage.github.io/',  // GitHub Pages プロジェクトサイト
+  base: '/',  // GitHub Pages プロジェクトサイト
   build: {
     outDir: '../dist',
     emptyOutDir: true,
