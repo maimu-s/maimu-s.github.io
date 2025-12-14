@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import './TalentSection.css';
-import maimPortrait from '../assets/images/talent/maimu-portrait.png';
-import initialThreeview from '../assets/images/talent/initial_threeviews.png';
-import chinalikeThreeview from '../assets/images/talent/chinalike_threeviews.png';
-import cyberThreeview from '../assets/images/talent/cyber_threeviews.png';
-import rionectionLogo from '../assets/images/logo/rionection_logo.png';
-import travLogo from '../assets/images/logo/trav_logo.png';
-import nonaniLogo from '../assets/images/logo/nonani_logo.png';
+import maimPortrait from '../assets/images/talent/maimu-portrait.png?format=webp&quality=85';
+import initialThreeview from '../assets/images/talent/initial_threeviews.png?format=webp&quality=80';
+import chinalikeThreeview from '../assets/images/talent/chinalike_threeviews.png?format=webp&quality=80';
+import cyberThreeview from '../assets/images/talent/cyber_threeviews.png?format=webp&quality=80';
+import rionectionLogo from '../assets/images/logo/rionection_logo.png?format=webp&quality=80';
+import travLogo from '../assets/images/logo/trav_logo.png?format=webp&quality=80';
+import nonaniLogo from '../assets/images/logo/nonani_logo.png?format=webp&quality=80';
 
 interface TalentData {
     image: string;

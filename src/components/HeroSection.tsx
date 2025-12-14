@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import './HeroSection.css';
-import logoHero from '../assets/images/logo/logo.png';
-import keyVisual from '../assets/images/hero/maimu-keyvisual.png';
-import backgroundImage from '../assets/images/hero/background.png';
+import logoHero from '../assets/images/logo/logo.png?format=webp&quality=80';
+import keyVisual from '../assets/images/hero/maimu-keyvisual.png?format=webp&quality=80';
+import backgroundImage from '../assets/images/hero/background.png?format=webp&quality=75&w=1920';
 
 interface TiltState {
     x: number;
