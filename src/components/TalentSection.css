@@ -606,3 +606,38 @@
         height: 10px;
     }
 }
+
+/* スマホ横向き対応 (767px以下 & 横向き) */
+@media (max-width: 767px) and (orientation: landscape) {
+    .threeview-content {
+        max-height: 90vh;
+        padding: 1rem 1.5rem;
+    }
+
+    .threeview-slides-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .threeview-slide {
+        gap: 0.5rem;
+    }
+
+    .threeview-image {
+        max-width: 90%;
+        max-height: 60vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .threeview-title {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+    }
+
+    .threeview-subtitle {
+        font-size: 0.9rem;
+    }
+}

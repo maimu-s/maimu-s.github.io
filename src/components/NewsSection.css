@@ -323,3 +323,23 @@
         object-fit: contain;
     }
 }
+
+/* スマホ横向き対応 (767px以下 & 横向き) */
+@media (max-width: 767px) and (orientation: landscape) {
+    .news-modal-content-wrapper {
+        flex-direction: row;
+    }
+
+    .news-modal-image-wrapper {
+        width: 40%;
+        max-width: 40%;
+    }
+
+    .news-modal-text {
+        flex: 1;
+    }
+
+    .news-modal-image {
+        max-height: 60vh;
+    }
+}

@@ -155,6 +155,10 @@ function ScheduleSection() {
                                     <div className="schedule-info">
                                         <h3 className="schedule-title">{item.title}</h3>
                                         <div className="schedule-meta">
+                                            <span className="platform-icon">
+                                                {getPlatformIcon(item.platform)}
+                                                {item.platform}
+                                            </span>
                                             <span className="schedule-date">
                                                 {formatDate(item.dateTime)}
                                             </span>
