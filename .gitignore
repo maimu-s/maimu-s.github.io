@@ -6,6 +6,7 @@ docs/
 
 # Build output
 build/
+dist/
 
 # Environment variables
 .env
