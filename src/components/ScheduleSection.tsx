@@ -7,11 +7,6 @@ function ScheduleSection() {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
-    const [touchStart, setTouchStart] = useState<number | null>(null);
-    const [touchEnd, setTouchEnd] = useState<number | null>(null);
-
-    // スワイプの最小距離
-    const minSwipeDistance = 50;
 
     // スケジュールを取得
     const loadSchedules = async (forceRefresh = false) => {
@@ -65,31 +60,6 @@ function ScheduleSection() {
                 left: direction === 'left' ? -scrollAmount : scrollAmount,
                 behavior: 'smooth'
             });
-        }
-    };
-
-    // タッチイベントハンドラー
-    const onTouchStart = (e: React.TouchEvent) => {
-        setTouchEnd(null);
-        setTouchStart(e.targetTouches[0].clientX);
-    };
-
-    const onTouchMove = (e: React.TouchEvent) => {
-        setTouchEnd(e.targetTouches[0].clientX);
-    };
-
-    const onTouchEnd = () => {
-        if (!touchStart || !touchEnd) return;
-
-        const distance = touchStart - touchEnd;
-        const isLeftSwipe = distance > minSwipeDistance;
-        const isRightSwipe = distance < -minSwipeDistance;
-
-        if (isLeftSwipe) {
-            scroll('right');
-        }
-        if (isRightSwipe) {
-            scroll('left');
         }
     };
 
@@ -159,9 +129,6 @@ function ScheduleSection() {
                         <div
                             className="schedule-list"
                             ref={scrollContainerRef}
-                            onTouchStart={onTouchStart}
-                            onTouchMove={onTouchMove}
-                            onTouchEnd={onTouchEnd}
                         >
                             {schedules.map((item) => (
                                 <a
