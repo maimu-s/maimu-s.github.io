@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './HeroSection.css';
-import logoHeroMobile from '../assets/images/logo/logo.png?format=webp&quality=80&w=300';
-import logoHeroDesktop from '../assets/images/logo/logo.png?format=webp&quality=80&w=600';
+import logoHero from '../assets/images/logo/logo.png?format=webp&quality=80&w=600';
 // キービジュアル: モバイル用(600px)とデスクトップ用(1200px)
 import keyVisualMobile from '../assets/images/hero/maimu-keyvisual.png?format=webp&quality=80&w=600';
 import keyVisualDesktop from '../assets/images/hero/maimu-keyvisual.png?format=webp&quality=80&w=1200';
@@ -68,8 +67,7 @@ function HeroSection() {
                 <div className="hero-content">
                 <div className="hero-logo">
                     <picture>
-                        <source media="(max-width: 767px)" srcSet={logoHeroMobile} />
-                        <img src={logoHeroDesktop} alt="鈴音舞夢" />
+                        <img src={logoHero} alt="鈴音舞夢" />
                     </picture>
                 </div>                    <p className="hero-catchphrase">
                         みんなに元気と笑顔を振りまく都会のお狐VTuber

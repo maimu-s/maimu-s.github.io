@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Header.css';
-import logoMobile from '../assets/images/logo/logo.png?format=webp&quality=80&w=100';
-import logoDesktop from '../assets/images/logo/logo.png?format=webp&quality=80&w=200';
+import logo from '../assets/images/logo/logo.png?format=webp&quality=80&w=600';
 
 function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -45,8 +44,7 @@ function Header() {
                 <div className="header-logo">
                     <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
                         <picture>
-                            <source media="(max-width: 767px)" srcSet={logoMobile} />
-                            <img src={logoDesktop} alt="鈴音舞夢" />
+                            <img src={logo} alt="鈴音舞夢" />
                         </picture>
                     </a>
                 </div>

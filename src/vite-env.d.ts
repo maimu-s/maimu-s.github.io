@@ -23,17 +23,7 @@ declare module '*.png?format=webp&quality=85&w=300' {
     export default src;
 }
 
-declare module '*.png?format=webp&quality=80&w=100' {
-    const src: string;
-    export default src;
-}
-
 declare module '*.png?format=webp&quality=80&w=150' {
-    const src: string;
-    export default src;
-}
-
-declare module '*.png?format=webp&quality=80&w=200' {
     const src: string;
     export default src;
 }
