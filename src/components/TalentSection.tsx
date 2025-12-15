@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import './TalentSection.css';
-import maimPortrait from '../assets/images/talent/maimu-portrait.png?format=webp&quality=85';
-import initialThreeview from '../assets/images/talent/initial_threeviews.png?format=webp&quality=80';
-import chinalikeThreeview from '../assets/images/talent/chinalike_threeviews.png?format=webp&quality=80';
-import cyberThreeview from '../assets/images/talent/cyber_threeviews.png?format=webp&quality=80';
-import rionectionLogo from '../assets/images/logo/rionection_logo.png?format=webp&quality=80';
-import travLogo from '../assets/images/logo/trav_logo.png?format=webp&quality=80';
-import nonaniLogo from '../assets/images/logo/nonani_logo.png?format=webp&quality=80';
+import maimPortrait from '../assets/images/talent/maimu-portrait.png?format=webp&quality=85&w=300';
+import initialThreeview from '../assets/images/talent/initial_threeviews.png?format=webp&quality=80&w=1200';
+import chinalikeThreeview from '../assets/images/talent/chinalike_threeviews.png?format=webp&quality=80&w=1200';
+import cyberThreeview from '../assets/images/talent/cyber_threeviews.png?format=webp&quality=80&w=1200';
+// ロゴ画像（モバイル用とデスクトップ用）
+import rionectionLogoMobile from '../assets/images/logo/rionection_logo.png?format=webp&quality=80&w=150';
+import rionectionLogoDesktop from '../assets/images/logo/rionection_logo.png?format=webp&quality=80&w=300';
+import travLogoMobile from '../assets/images/logo/trav_logo.png?format=webp&quality=80&w=150';
+import travLogoDesktop from '../assets/images/logo/trav_logo.png?format=webp&quality=80&w=300';
+import nonaniLogoMobile from '../assets/images/logo/nonani_logo.png?format=webp&quality=80&w=150';
+import nonaniLogoDesktop from '../assets/images/logo/nonani_logo.png?format=webp&quality=80&w=300';
 
 interface TalentData {
     image: string;
@@ -15,12 +19,14 @@ interface TalentData {
     description: string;
     projects: {
         name: string;
-        logo: string;
+        logoMobile: string;
+        logoDesktop: string;
         url: string;
     }[];
     groups: {
         name: string;
-        logo: string;
+        logoMobile: string;
+        logoDesktop: string;
         url: string;
     }[];
     social: {
@@ -95,7 +101,6 @@ function TalentSection() {
         }
     };
 
-    // モックデータ(後で実際のデータに置き換え)
     const talentData: TalentData = {
         image: maimPortrait,
         name: '鈴音舞夢',
@@ -104,19 +109,22 @@ function TalentSection() {
         projects: [
             {
                 name: 'RIONECTION',
-                logo: rionectionLogo,
+                logoMobile: rionectionLogoMobile,
+                logoDesktop: rionectionLogoDesktop,
                 url: 'https://riot-music.com/rionection/'
             }
         ],
         groups: [
             {
                 name: 'TravelVasket',
-                logo: travLogo,
+                logoMobile: travLogoMobile,
+                logoDesktop: travLogoDesktop,
                 url: 'https://x.com/TraV_project'
             },
             {
                 name: 'ノンストップアニマルズ',
-                logo: nonaniLogo,
+                logoMobile: nonaniLogoMobile,
+                logoDesktop: nonaniLogoDesktop,
                 url: 'https://www.youtube.com/@nonstop-animals'
             }
         ],
@@ -198,7 +206,10 @@ function TalentSection() {
                                                 title={group.name}
                                             >
                                                 <span className="affiliation-name">{group.name}</span>
-                                                <img src={group.logo} alt={group.name} className="affiliation-logo" />
+                                                <picture>
+                                                    <source media="(max-width: 767px)" srcSet={group.logoMobile} />
+                                                    <img src={group.logoDesktop} alt={group.name} className="affiliation-logo" />
+                                                </picture>
                                             </a>
                                         ))}
                                     </div>
@@ -220,7 +231,10 @@ function TalentSection() {
                                                 title={project.name}
                                             >
                                                 <span className="affiliation-name">{project.name}</span>
-                                                <img src={project.logo} alt={project.name} className="affiliation-logo" />
+                                                <picture>
+                                                    <source media="(max-width: 767px)" srcSet={project.logoMobile} />
+                                                    <img src={project.logoDesktop} alt={project.name} className="affiliation-logo" />
+                                                </picture>
                                             </a>
                                         ))}
                                     </div>

@@ -8,11 +8,15 @@
 
         /* Bundler mode */
         "moduleResolution": "bundler",
+        "allowArbitraryExtensions": true,
         "allowImportingTsExtensions": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx",
+
+        /* Types */
+        "types": ["vite/client"],
 
         /* Linting */
         "strict": true,
@@ -20,6 +24,6 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true
     },
-    "include": ["src"],
+    "include": ["src", "src/vite-env.d.ts"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }

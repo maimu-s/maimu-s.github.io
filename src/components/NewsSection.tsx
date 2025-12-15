@@ -36,6 +36,17 @@ function NewsSection() {
         document.body.style.overflow = '';
     };
 
+    type ImgParams = Record<string, string | number | boolean | null | undefined>;
+
+    const withImgParams = (url: string, params: ImgParams): string => {
+        const u = new URL(url);
+        for (const [k, v] of Object.entries(params)) {
+            if (v === null || v === undefined) continue;
+            u.searchParams.set(k, String(v));
+        }
+        return u.toString();
+    };
+
     return (
         <section className="news-section" id="news">
             <div className="news-container">
@@ -88,11 +99,23 @@ function NewsSection() {
                                 </div>
                                 {selectedNews.imageUrl && (
                                     <div className="news-modal-image-wrapper">
+                                        <picture>
+                                        <source
+                                            srcSet={withImgParams(selectedNews.imageUrl, { fm: "avif", w: 1200, q: 70 })}
+                                            type="image/avif"
+                                        />
+                                        <source
+                                            srcSet={withImgParams(selectedNews.imageUrl, { fm: "webp", w: 1200, q: 80 })}
+                                            type="image/webp"
+                                        />
                                         <img
-                                            src={selectedNews.imageUrl}
+                                            src={withImgParams(selectedNews.imageUrl, { w: 1200 })}
                                             alt={selectedNews.title}
                                             className="news-modal-image"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
+                                        </picture>
                                     </div>
                                 )}
                             </div>

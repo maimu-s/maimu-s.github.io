@@ -153,24 +153,10 @@ function getMockNews(): NewsItem[] {
     return [
         {
             id: '1',
-            date: '2025.12.12',
-            title: 'ウェブサイトをリニューアルしました！',
-            content: '鈴音舞夢の公式ウェブサイトをリニューアルオープンしました。今後ともよろしくお願いいたします！',
+            date: '2000.00.00',
+            title: 'Mock Title',
+            content: 'Mock Content',
             category: 'お知らせ'
-        },
-        {
-            id: '2',
-            date: '2025.12.10',
-            title: 'YouTube チャンネル登録者数1000人突破！',
-            content: 'YouTubeチャンネルの登録者数が1000人を突破しました！いつも応援ありがとうございます！これからもたくさん配信していきますので、よろしくお願いします！',
-            category: '活動報告'
-        },
-        {
-            id: '3',
-            date: '2025.12.05',
-            title: '初配信アーカイブ公開中',
-            content: '初配信のアーカイブをYouTubeで公開しています。ぜひご覧ください！',
-            category: '配信情報'
         }
     ];
 }
