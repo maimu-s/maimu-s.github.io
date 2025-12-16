@@ -1,0 +1,128 @@
+.affiliation-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* セクション（ユニット/プロジェクト） */
+.affiliation-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.affiliation-section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ddd;
+    color: #333;
+}
+
+/* カード形式のリスト */
+.affiliation-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* カード */
+.affiliation-card {
+    padding: 1.25rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.affiliation-card:hover {
+    border-color: #bbb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* カードのヘッダー */
+.affiliation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+/* タイトルグループ（タイトル+ロゴ） */
+.affiliation-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.affiliation-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+/* ロゴ画像 */
+.affiliation-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* リンクグループ */
+.affiliation-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.affiliation-link {
+    color: #ff9999;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.affiliation-link:hover {
+    color: #ff6666;
+    background: rgba(255, 153, 153, 0.1);
+}
+
+/* 説明文 */
+.affiliation-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .affiliation-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .affiliation-links {
+        align-items: flex-start;
+    }
+
+    .affiliation-link {
+        white-space: normal;
+    }
+
+    .affiliation-logo {
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -8,12 +8,30 @@ export default defineConfig({
     react(),
     imagetools({
       defaultDirectives: (url) => {
-        // PNG画像を自動的にWebPに変換
+        // 立ち絵画像は高解像度で処理
+        if (url.pathname.includes('/talent/detail/costumes/')) {
+          if (url.pathname.includes('/thumb.png')) {
+            // サムネイルは小さく
+            return new URLSearchParams({
+              format: 'webp',
+              quality: '80',
+              w: '300',
+            })
+          } else {
+            // 立ち絵は高解像度
+            return new URLSearchParams({
+              format: 'webp',
+              quality: '85',
+              w: '1200',
+            })
+          }
+        }
+        // その他のPNG画像
         if (url.searchParams.has('webp') || url.pathname.endsWith('.png')) {
           return new URLSearchParams({
-            format: 'webp;png', // WebPとPNGの両方を生成（フォールバック用）
+            format: 'webp;png',
             quality: '80',
-            w: '1920', // 最大幅を制限
+            w: '1920',
           })
         }
         return new URLSearchParams()

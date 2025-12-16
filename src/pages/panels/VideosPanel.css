@@ -1,0 +1,96 @@
+/* 動画グリッドレイアウト: 最大8個（縦2×横4） */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 100%;
+}
+
+.video-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.video-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.video-item-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+    line-height: 1.4;
+}
+
+.video-item-description {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(33, 33, 33, 0.9);
+    line-height: 1.3;
+}
+
+.video-player-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #000000;
+}
+
+.video-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 6px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1440px) {
+    .videos-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .videos-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .video-item {
+        padding: 10px;
+        gap: 6px;
+    }
+
+    .video-item-title {
+        font-size: 13px;
+    }
+
+    .video-item-description {
+        font-size: 11px;
+    }
+}

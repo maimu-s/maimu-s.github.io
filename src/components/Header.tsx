@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/images/logo/logo.png?format=webp&quality=80&w=600';
 
 function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,9 +19,28 @@ function Header() {
     }, []);
 
     const scrollToSection = (sectionId: string): void => {
+        setIsMobileMenuOpen(false);
+
+        // ホームページ以外にいる場合は、まずホームページに戻る
+        if (location.pathname !== '/') {
+            navigate('/');
+            // ナビゲーション後、DOM が完全にレンダリングされるまで待つ
+            setTimeout(() => {
+                // requestAnimationFrame を2回使用して次のフレームで実行
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        performScroll(sectionId);
+                    });
+                });
+            }, 350);
+        } else {
+            performScroll(sectionId);
+        }
+    };
+
+    const performScroll = (sectionId: string): void => {
         if (sectionId === 'home') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            setIsMobileMenuOpen(false);
             return;
         }
 
@@ -34,7 +56,6 @@ function Header() {
                 top: offsetPosition,
                 behavior: 'smooth'
             });
-            setIsMobileMenuOpen(false);
         }
     };
 
@@ -72,8 +93,8 @@ function Header() {
                             </a>
                         </li>
                         <li>
-                            <a href="#talent" onClick={(e) => { e.preventDefault(); scrollToSection('talent'); }}>
-                                TALENT
+                            <a href="#profile" onClick={(e) => { e.preventDefault(); scrollToSection('profile'); }}>
+                                PROFILE
                             </a>
                         </li>
                         <li>

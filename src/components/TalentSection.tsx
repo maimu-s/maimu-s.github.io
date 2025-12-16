@@ -1,9 +1,6 @@
-import { useState } from 'react';
+import { Link } from "react-router-dom";
 import './TalentSection.css';
 import maimPortrait from '../assets/images/talent/maimu-portrait.png?format=webp&quality=85&w=300';
-import initialThreeview from '../assets/images/talent/initial_threeviews.png?format=webp&quality=80&w=1200';
-import chinalikeThreeview from '../assets/images/talent/chinalike_threeviews.png?format=webp&quality=80&w=1200';
-import cyberThreeview from '../assets/images/talent/cyber_threeviews.png?format=webp&quality=80&w=1200';
 // ロゴ画像（モバイル用とデスクトップ用）
 import rionectionLogoMobile from '../assets/images/logo/rionection_logo.png?format=webp&quality=80&w=150';
 import rionectionLogoDesktop from '../assets/images/logo/rionection_logo.png?format=webp&quality=80&w=300';
@@ -38,69 +35,6 @@ interface TalentData {
 }
 
 function TalentSection() {
-    const [isThreeviewOpen, setIsThreeviewOpen] = useState(false);
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [touchStart, setTouchStart] = useState<number | null>(null);
-    const [touchEnd, setTouchEnd] = useState<number | null>(null);
-
-    // スワイプの最小距離
-    const minSwipeDistance = 50;
-
-    // 三面図データ
-    const threeviews = [
-        { name: '初期衣装', image: initialThreeview },
-        { name: '中華風衣装', image: chinalikeThreeview },
-        { name: 'サイバー風衣装', image: cyberThreeview }
-    ];
-
-    // スライド切り替え関数
-    const nextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % threeviews.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + threeviews.length) % threeviews.length);
-    };
-
-    // モーダルを開くときにスライドをリセット
-    const openModal = () => {
-        setCurrentSlide(0);
-        setIsThreeviewOpen(true);
-        // モーダル表示時に背景のスクロールを防止
-        document.body.style.overflow = 'hidden';
-    };
-
-    const closeModal = () => {
-        setIsThreeviewOpen(false);
-        // モーダル閉じる時に背景のスクロールを復元
-        document.body.style.overflow = '';
-    };
-
-    // タッチイベントハンドラー
-    const onTouchStart = (e: React.TouchEvent) => {
-        setTouchEnd(null);
-        setTouchStart(e.targetTouches[0].clientX);
-    };
-
-    const onTouchMove = (e: React.TouchEvent) => {
-        setTouchEnd(e.targetTouches[0].clientX);
-    };
-
-    const onTouchEnd = () => {
-        if (!touchStart || !touchEnd) return;
-
-        const distance = touchStart - touchEnd;
-        const isLeftSwipe = distance > minSwipeDistance;
-        const isRightSwipe = distance < -minSwipeDistance;
-
-        if (isLeftSwipe) {
-            nextSlide();
-        }
-        if (isRightSwipe) {
-            prevSlide();
-        }
-    };
-
     const talentData: TalentData = {
         image: maimPortrait,
         name: '鈴音舞夢',
@@ -137,11 +71,11 @@ function TalentSection() {
     };
 
     return (
-        <section id="talent" className="talent-section">
+        <section id="profile" className="talent-section">
             <div className="talent-container">
                 <h2 className="section-title">
-                    <span className="title-en">TALENT</span>
-                    <span className="title-ja">タレント</span>
+                    <span className="title-en">PROFILE</span>
+                    <span className="title-ja">プロフィール</span>
                 </h2>
 
                 <div className="talent-card">
@@ -149,14 +83,11 @@ function TalentSection() {
                         <div className="talent-icon">
                             <img src={talentData.image} alt={talentData.name} />
                         </div>
-                        <button
-                            className="threeview-button"
-                            onClick={openModal}
-                            aria-label="三面図を見る"
-                        >
-                            三面図
-                        </button>
-                    </div>                    <div className="talent-info">
+                        <Link to="/talent/maimu" className="detail-button">
+                            詳しく見る
+                        </Link>
+                    </div>
+                    <div className="talent-info">
                         <div className="talent-header">
                             <h3 className="talent-name-ja">{talentData.name}</h3>
                             <p className="talent-name-en">{talentData.nameEn}</p>
@@ -243,77 +174,6 @@ function TalentSection() {
                         </div>
                     </div>
                 </div>
-
-                {/* 三面図ポップアップ */}
-                {isThreeviewOpen && (
-                    <div className="threeview-modal" onClick={closeModal}>
-                        <div
-                            className="threeview-content"
-                            onClick={(e) => e.stopPropagation()}
-                            onTouchStart={onTouchStart}
-                            onTouchMove={onTouchMove}
-                            onTouchEnd={onTouchEnd}
-                        >
-                            <button
-                                className="threeview-close"
-                                onClick={closeModal}
-                                aria-label="閉じる"
-                            >
-                                ×
-                            </button>
-                            <h3 className="threeview-title">衣装 三面図</h3>
-
-                            <div className="threeview-slider">
-                                {/* 左ボタン (デスクトップのみ) */}
-                                <button
-                                    className="threeview-nav threeview-nav-prev threeview-nav-desktop"
-                                    onClick={prevSlide}
-                                    aria-label="前の衣装"
-                                >
-                                    ‹
-                                </button>
-
-                                {/* スライドコンテナ */}
-                                <div className="threeview-slides-container">
-                                    {threeviews.map((costume, index) => (
-                                        <div
-                                            key={index}
-                                            className={`threeview-slide ${index === currentSlide ? 'active' : ''}`}
-                                        >
-                                            <h4 className="threeview-subtitle">{costume.name}</h4>
-                                            <img
-                                                src={costume.image}
-                                                alt={`${talentData.name} - ${costume.name}`}
-                                                className="threeview-image"
-                                            />
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* 右ボタン (デスクトップのみ) */}
-                                <button
-                                    className="threeview-nav threeview-nav-next threeview-nav-desktop"
-                                    onClick={nextSlide}
-                                    aria-label="次の衣装"
-                                >
-                                    ›
-                                </button>
-                            </div>
-
-                            {/* インジケーター */}
-                            <div className="threeview-indicators">
-                                {threeviews.map((_, index) => (
-                                    <button
-                                        key={index}
-                                        className={`threeview-indicator ${index === currentSlide ? 'active' : ''}`}
-                                        onClick={() => setCurrentSlide(index)}
-                                        aria-label={`${threeviews[index].name}へ移動`}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                )}
             </div>
         </section>
     );

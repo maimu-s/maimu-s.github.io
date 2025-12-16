@@ -7,6 +7,7 @@
     transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
     padding: 1rem 0;
     overflow: visible;
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 .header.scrolled {

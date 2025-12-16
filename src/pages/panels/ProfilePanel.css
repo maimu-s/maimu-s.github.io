@@ -1,0 +1,383 @@
+/* Profile Panel Styles */
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .profile-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.profile-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.profile-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .profile-right {
+        gap: 1rem;
+    }
+}
+
+.panel-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section-title {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dotted rgba(102, 102, 102, 0.4);
+}
+
+/* プロフィール情報カード */
+.info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.profile-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-row {
+    display: grid;
+    gap: 1rem;
+}
+
+.profile-row-1 {
+    grid-template-columns: 1fr;
+}
+
+.profile-row-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 480px) {
+    .profile-row-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.profile-row-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 640px) {
+    .profile-row-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-row-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+.value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    font-size: 0.875rem;
+}
+
+/* SNS Links */
+.sns-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.sns-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sns-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.sns-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Twitter/X Feed - PC版のみ表示 */
+.twitter-feed-section {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .twitter-feed-section {
+        display: flex;
+    }
+}
+
+.twitter-embed-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.twitter-link {
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+    align-self: flex-start;
+}
+
+.twitter-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* TwitterFeed コンポーネントのスタイル調整 */
+.twitter-feed-section .p5-section {
+    padding: 0;
+    margin: 0;
+    max-width: none;
+}
+
+.twitter-feed-section .p5-sectionHeader {
+    display: none;
+}
+
+.twitter-feed-section .p5-card {
+    max-width: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.twitter-feed-section .p5-muted {
+    margin-top: 0.5rem;
+}
+
+/* プロフィール情報カード */
+.info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.profile-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-row {
+    display: grid;
+    gap: 1rem;
+}
+
+.profile-row-1 {
+    grid-template-columns: 1fr;
+}
+
+.profile-row-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 480px) {
+    .profile-row-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.profile-row-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 640px) {
+    .profile-row-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-row-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+.value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    font-size: 0.875rem;
+}
+
+/* SNS Links */
+.sns-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.sns-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sns-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.sns-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Twitter/X Feed - PC版のみ表示 */
+.twitter-feed-section {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .twitter-feed-section {
+        display: flex;
+    }
+}
+
+.twitter-embed-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.twitter-link {
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+    align-self: flex-start;
+}
+
+.twitter-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* TwitterFeed コンポーネントのスタイル調整 */
+.twitter-feed-section .p5-section {
+    padding: 0;
+    margin: 0;
+    max-width: none;
+}
+
+.twitter-feed-section .p5-sectionHeader {
+    display: none;
+}
+
+.twitter-feed-section .p5-card {
+    max-width: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.twitter-feed-section .p5-muted {
+    margin-top: 0.5rem;
+}
