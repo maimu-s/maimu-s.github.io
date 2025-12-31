@@ -7,8 +7,8 @@ import type { TimelineItem } from "../../types/talent-detail";
 
 export default function HistoryPanel() {
     const d = maimuDetail;
-    // タイムラインを日付順（降順：新しい順）にソート
-    const sortedAchievements = sortTimeline(d.history.achievements, 'desc');
+    // タイムラインを日付順（昇順：古い順）にソート
+    const sortedAchievements = sortTimeline(d.history.achievements, 'asc');
 
     // 選択されたタイムラインアイテムを管理
     const [selectedItem, setSelectedItem] = useState<TimelineItem | null>(
