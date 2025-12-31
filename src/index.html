@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self';
-                script-src 'self' 'unsafe-inline';
-                style-src 'self' 'unsafe-inline';
+                script-src 'self' 'unsafe-inline' https://platform.twitter.com;
+                style-src 'self' 'unsafe-inline' https://platform.twitter.com;
                 img-src 'self' data: https:;
-                frame-src https://www.youtube.com https://youtu.be;
+                frame-src https://www.youtube.com https://youtu.be https://platform.twitter.com https://syndication.twitter.com;
                 connect-src 'self' https://www.googleapis.com https://twitchrss.appspot.com https://corsproxy.io https://*.microcms.io">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">

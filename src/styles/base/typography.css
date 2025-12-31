@@ -1,0 +1,61 @@
+/* タイポグラフィと共通セクションタイトル */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* セクションタイトル共通スタイル（TalentSection, NewsSection, ScheduleSection, ContactSection）*/
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title .title-en,
+.news-title .title-en,
+.contact-title .title-en {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #F5B3B8;
+    letter-spacing: 0.1em;
+}
+
+.section-title .title-ja,
+.news-title .title-ja,
+.contact-title .title-ja {
+    display: block;
+    font-size: 1rem;
+    color: #666;
+    letter-spacing: 0.2em;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+/* パネルセクションタイトル（ProfilePanel用）*/
+.panel-section-title {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dotted rgba(102, 102, 102, 0.4);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 767px) {
+    .section-title {
+        margin-bottom: 2rem;
+    }
+
+    .section-title .title-en,
+    .news-title .title-en,
+    .contact-title .title-en {
+        font-size: 2rem;
+    }
+}

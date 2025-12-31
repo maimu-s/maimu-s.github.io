@@ -213,7 +213,7 @@
     margin-top: auto;
 }
 
-.social-link {
+.social-icon-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -225,9 +225,11 @@
     text-decoration: none;
     font-size: 1.5rem;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
-.social-link:hover {
+.social-icon-btn:hover {
     background-color: #F6D462;
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(246, 212, 98, 0.5);

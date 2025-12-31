@@ -159,7 +159,7 @@ function ScheduleSection() {
                                                 {getPlatformIcon(item.platform)}
                                                 {item.platform}
                                             </span>
-                                            <span className="schedule-date">
+                                            <span>
                                                 {formatDate(item.dateTime)}
                                             </span>
                                         </div>

@@ -58,7 +58,7 @@ function Footer() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={link.name}
-                            className="social-link"
+                            className="social-text-link"
                         >
                             {link.icon}
                         </a>

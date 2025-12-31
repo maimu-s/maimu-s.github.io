@@ -92,7 +92,7 @@
 .td-head-en {
     font-size: 24px;
     line-height: 1.2;
-    color: #999;
+    color: #777;
     font-weight: 700;
     letter-spacing: 0.08em;
     opacity: 0;
@@ -1326,11 +1326,6 @@
     padding: 16px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.affiliation-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(245, 179, 184, 0.25);
-    border-color: rgba(245, 179, 184, 0.5);
-}
 
 .affiliation-title {
     font-size: 17px;
@@ -1560,7 +1555,6 @@
 
 .affiliation-item {
     background: rgba(255, 255, 255, 0.7);
-    border: 2px solid rgba(245, 179, 184, 0.3);
     border-radius: 12px;
     padding: 12px 14px;
     cursor: pointer;

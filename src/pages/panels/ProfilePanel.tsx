@@ -99,7 +99,7 @@ export default function ProfilePanel() {
                 {/* 右側：SNS、Xフィード、性格など */}
                 <div className="profile-right">
                     <div className="panel-section">
-                        <h3 className="section-title">SNS・リンク</h3>
+                        <h3 className="panel-section-title">SNS・リンク</h3>
                         <div className="sns-links">
                             {Object.entries(d.socials).map(([key, social]) => (
                                 <a key={key} href={social.url} target="_blank" rel="noopener noreferrer" className="sns-link" aria-label={social.label}>
@@ -129,7 +129,7 @@ export default function ProfilePanel() {
                     </div>
 
                     <div className="panel-section twitter-feed-section">
-                        <h3 className="section-title">X フィード</h3>
+                        <h3 className="panel-section-title">X フィード</h3>
                         <div className="twitter-embed-wrapper">
                             <TwitterFeed handle="bc_hakumai" theme="dark" />
                             <a href="https://twitter.com/bc_hakumai" target="_blank" rel="noopener noreferrer" className="twitter-link">

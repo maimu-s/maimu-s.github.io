@@ -54,14 +54,40 @@
 ## スタイリング方針
 
 - コンポーネント単位のプレーンCSSを採用（各コンポーネントで `import './Component.css'` を使用）
-- グローバルなリセットやユーティリティは `src/css/style.css` に記載
 
 ## 重要ファイルと実装箇所
 
-- `src/utils/newsApi.ts`: microCMS 統合（キャッシュ15分、モックフォールバック）
-- `src/utils/youtubeApi.ts`: YouTube Data API v3 統合（キャッシュ15分）
-- `src/utils/twitchApi.ts`: Twitch RSS 統合（DEV時は Vite プロキシ経由）
-- `src/utils/scheduleApi.ts`: 上記を統合してスケジュールを生成
+### ページ構成
+- `src/pages/HomePage.tsx`: ホームページ（6つのセクション構成）
+- `src/pages/MaimuMenuPage.tsx`: キャラクターメニュー（プロフィール詳細）
+- `src/pages/panels/ProfilePanel.tsx`: プロフィール情報
+- `src/pages/panels/HistoryPanel.tsx`: 履歴情報
+- `src/pages/panels/VideosPanel.tsx`: 動画一覧
+- `src/pages/panels/AffiliationsPanel.tsx`: アファリエーション情報
+
+### コンポーネント
+- `src/components/Header.tsx`: 固定ヘッダー（ナビゲーション、SNSリンク）
+- `src/components/HeroSection.tsx`: ヒーロー画像（3D傾斜エフェクト）
+- `src/components/NewsSection.tsx`: microCMS統合ニュース一覧
+- `src/components/TalentSection.tsx`: プロフィール表示
+- `src/components/ScheduleSection.tsx`: YouTube/Twitch統合スケジュール
+- `src/components/ContactSection.tsx`: お問い合わせセクション
+- `src/components/Footer.tsx`: フッター（著作権、SNSリンク）
+- `src/components/CostumeGallery.tsx`: 衣装ギャラリー
+- `src/components/TwitterFeed.tsx`: Twitter Feed（参考実装）
+- `src/components/OverlayPanel.tsx`: モーダルパネル（ニュース詳細表示）
+
+### ユーティリティ・API統合
+- `src/utils/newsApi.ts`: microCMS API統合（ニュース取得、キャッシュ15分、モックフォールバック）
+- `src/utils/youtubeApi.ts`: YouTube Data API v3統合（ライブ検索、スケジュール取得、キャッシュ15分）
+- `src/utils/youtubeUtils.ts`: YouTube関連ユーティリティ関数
+- `src/utils/twitchApi.ts`: Twitch RSS統合（配信情報取得、DEV時はViteプロキシ経由）
+- `src/utils/scheduleApi.ts`: YouTube/Twitch統合スケジュール生成（最大10件、新順ソート）
+
+### データ・型定義
+- `src/data/talentDetailMaimu.ts`: キャラクター詳細データ（プロフィール、経歴）
+- `src/data/timelineData.ts`: タイムライン情報
+- `src/types/talent-detail.ts`: キャラクター型定義
 
 ## 環境変数（例）
 
@@ -102,6 +128,7 @@ npm run deploy
 - 2025-12-12: API統合ガイドライン追加 (YouTube/Twitch API制限と推奨同期間隔)
 - 2025-12-13: フェーズ3完了 (microCMS統合、NewsSection/ContactSection追加)
 - 2025-12-16: ドキュメントをソースコードの現状に合わせて修正（プレーンCSSを明記）
+- 2025-12-31: ページ/コンポーネント/ユーティリティ構成を更新
 
 ---
 

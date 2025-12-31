@@ -31,8 +31,6 @@
 │   │   ├── youtubeApi.ts
 │   │   ├── twitchApi.ts
 │   │   └── scheduleApi.ts
-│   ├── css/               # スタイルシート
-│   │   └── style.css
 │   └── assets/            # 画像などのアセット
 │       └── images/
 │           ├── hero/

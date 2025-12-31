@@ -1,0 +1,117 @@
+/* 共通ボタンスタイル */
+
+/* テキスト型ソーシャルリンク（Header, Footer）*/
+.social-text-link {
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.social-text-link:hover {
+    color: #F5B3B8;
+    transform: translateY(-5px);
+}
+
+/* アイコンボタン型ソーシャルリンク（TalentSection）*/
+.social-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: #F5B3B8;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.social-icon-btn:hover {
+    background-color: #F6D462;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(246, 212, 98, 0.5);
+}
+
+/* プライマリボタン（グラデーション）*/
+.btn-primary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #F5B3B8 0%, #F6D462 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(245, 179, 184, 0.4);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #F6D462;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(246, 212, 98, 0.5);
+}
+
+/* スモールボタン */
+.btn-sm {
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, #F5B3B8 0%, #F6D462 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(245, 179, 184, 0.3);
+    white-space: nowrap;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-sm:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(245, 179, 184, 0.5);
+}
+
+/* ステータスバッジ（配信予定/配信中/アーカイブ）*/
+.status-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+}
+
+.status-配信予定 {
+    background-color: #4CAF50;
+}
+
+.status-配信中 {
+    background-color: #FF4444;
+    animation: pulse 2s infinite;
+}
+
+.status-アーカイブ {
+    background-color: #999;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}

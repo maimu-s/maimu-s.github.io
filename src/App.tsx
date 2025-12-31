@@ -7,7 +7,7 @@ import ProfilePanel from "./pages/panels/ProfilePanel";
 import HistoryPanel from "./pages/panels/HistoryPanel";
 import VideosPanel from "./pages/panels/VideosPanel";
 import AffiliationsPanel from "./pages/panels/AffiliationsPanel";
-import "./css/style.css";
+import "./styles/index.css";
 
 function Layout() {
   return (
