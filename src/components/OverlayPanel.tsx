@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import forestBuildingBackground from "../assets/images/talent/detail/background/forest_building.png?format=webp&quality=75&w=1920";
+import panelBackground from "../assets/images/talent/detail/background/background.png?format=webp&quality=75&w=1920";
 import "./talentDetail.css";
+
+const panelBackgroundImage = `url("${forestBuildingBackground}"), url("${panelBackground}")`;
 
 export default function OverlayPanel({
     title,
@@ -67,7 +71,7 @@ export default function OverlayPanel({
             aria-label={title}
         >
             <button className="td-backdrop" onClick={close} aria-label="閉じる（背景）" />
-            <aside className="td-panel">
+            <aside className="td-panel" style={{ backgroundImage: panelBackgroundImage }}>
                 <div className="shooting-star-1"></div>
                 <div className="shooting-star-2"></div>
                 <div className="shooting-star-3"></div>
