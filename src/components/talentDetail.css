@@ -1148,13 +1148,13 @@
     background: #f39ca3;
 }
 
-/* タイムラインの縦線 */
+/* タイムラインの縦線 - CSS変数で動的に高さ調整 */
 .timeline-list-wrapper::before {
     content: '';
     position: absolute;
     left: 6px;
     top: 8px;
-    bottom: -100%;
+    bottom: var(--timeline-bottom, -100%);
     width: 3px;
     background: linear-gradient(180deg, #F5B3B8, #F6D462);
     border-radius: 2px;

@@ -41,7 +41,10 @@ export default function AffiliationsPanel() {
                                         </div>
                                     )}
                                 </div>
-                                <p className="affiliation-description">{unit.description}</p>
+                                <div
+                                    className="affiliation-description"
+                                    dangerouslySetInnerHTML={{ __html: unit.description }}
+                                />
                             </div>
                         ))}
                     </div>
@@ -80,7 +83,10 @@ export default function AffiliationsPanel() {
                                         </div>
                                     )}
                                 </div>
-                                <p className="affiliation-description">{project.description}</p>
+                                <div
+                                    className="affiliation-description"
+                                    dangerouslySetInnerHTML={{ __html: project.description }}
+                                />
                             </div>
                         ))}
                     </div>

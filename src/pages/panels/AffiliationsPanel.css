@@ -1,6 +1,6 @@
 .affiliation-layout {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
     padding: 1rem;
 }
@@ -103,6 +103,10 @@
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
+    .affiliation-layout {
+        grid-template-columns: 1fr;
+    }
+
     .affiliation-header {
         flex-direction: column;
         align-items: flex-start;

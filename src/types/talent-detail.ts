@@ -71,7 +71,6 @@ export type TalentDetail = {
   history: TalentHistory;
   units: TalentLinkBlock[];
   projects: TalentLinkBlock[];
-  archives: { title: string; items: { label: string; url: string; note?: string }[] }[];
   recommendedVideos: RecommendedVideo[];  // 追加
   socials: Record<string, { label: string; url: string }>;
   twitter: { handle: string; widgetTheme?: "light" | "dark" };

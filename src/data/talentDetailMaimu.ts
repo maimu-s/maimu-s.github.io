@@ -86,93 +86,77 @@ export const maimuDetail: TalentDetail = {
   units: [
     {
       title: "TravelVasket",
-      description: "ユニット説明（仮）",
+      description: "FF14を中心に活動する、配信者・ストリーマーのチーム。<br>Xのハッシュタグ「#とらぶい」でコラボ配信や企画を展開。<br>メンバーそれぞれの視点で、攻略・雑談・イベント参加など幅広く盛り上げています。<br>ゲームの楽しさを“みんなで旅する”感覚で共有するコミュニティです。",
       icon: new URL('../assets/images/logo/trav_logo.png', import.meta.url).href,
       links: [
-        { label: "公式/関連リンク（仮）", url: "https://example.com" },
+        { label: "公式X", url: "https://x.com/TraV_project" },
       ],
     },
     {
       title: "ノンストップアニマルズ",
-      description: "ユニット説明（仮）",
+      description: "春藤橘・犬倉晴・鈴音舞夢による、バーチャルバンド。<br>担当はベース：犬倉晴／キーボード：鈴音舞夢／ドラム：春藤橘。<br>バンドカバーや定期オンラインライブなど、音楽を届ける活動に奮闘中。<br>3人のわちゃっとした空気感と演奏のギャップも見どころです。",
       icon: new URL('../assets/images/logo/nonani_logo.png', import.meta.url).href,
       links: [
-        { label: "公式/関連リンク（仮）", url: "https://example.com" },
+        { label: "公式Youtubeチャンネル", url: "https://www.youtube.com/@nonstop-animals" },
       ],
     },
   ],
   projects: [
     {
       title: "RIONECTION",
-      description: "プロジェクト説明（仮）",
+      description: "RIOT MUSICが運営する、VTuberの活動を総合的にサポートするプロジェクト。<br>配信・SNS・分析・グッズ・ライブ制作・3D・楽曲制作まで、様々な面でサポートが可能。<br>「本当にやりたいこと」を形にするための環境づくりを一緒に進めてくれます。<br>鈴音舞夢も参加メンバーの一人として名を連ねています。",
       icon: new URL('../assets/images/logo/rionection_logo.png', import.meta.url).href,
-      links: [{ label: "公式/関連リンク（仮）", url: "https://example.com" }],
-    },
-  ],
-  archives: [
-    {
-      title: "はじめての人向け",
-      items: [
-        { label: "自己紹介回（仮）", url: "https://www.youtube.com/" },
-        { label: "代表回（仮）", url: "https://www.youtube.com/" },
-      ],
-    },
-    {
-      title: "歌が聴きたい方はこちら！",
-      items: [
-        { label: "歌枠おすすめ①（仮）", url: "https://www.youtube.com/" },
-        { label: "歌枠おすすめ②（仮）", url: "https://www.youtube.com/" },
-      ],
+      links: [{ label: "公式HP", url: "https://riot-music.com/rionection/" }],
     },
   ],
   recommendedVideos: [
     {
       id: "intro",
       title: "初めての人向け動画",
-      playlistId: "PLxxxxxxxxxxxxxxx",
+      playlistId: "PL4VTWL32NQTV-F8-yhr6Uc_Ah2oHNU6Ul",
       description: "鈴音舞夢を知るならまずコレ！",
     },
     {
       id: "gaming",
       title: "切り抜き動画",
-      playlistId: "PLxxxxxxxxxxxxxxx",
+      playlistId: "PL4VTWL32NQTU6WxFt38qz6IZt_R2J4upR",
       description: "ゲーム配信のハイライト映像！",
     },
     {
       id: "collaboration",
       title: "案件動画&配信",
-      playlistId: "PLxxxxxxxxxxxxxxx",
+      playlistId: "PL4VTWL32NQTWZxZXNqvq4Pp5FOscfJiBk",
       description: "お仕事させていただいた動画や配信集！",
     },
     {
       id: "singing",
       title: "歌ってみた動画",
-      playlistId: "PLxxxxxxxxxxxxxxx",
+      playlistId: "PL4VTWL32NQTWQizZWchPDKj7Q1tiggfh6",
       description: "歌ってみちゃったりもする！",
     },
     {
       id: "galupa",
       title: "ガルパ配信",
-      playlistId: "PLxxxxxxxxxxxxxxx",
+      playlistId: "PL4VTWL32NQTVgGnUgnubqQOzxj7mz7RkZ",
       description: "バンドリ！ガールズバンドパーティ！配信集！",
     },
     {
       id: "stgr_aimaimi",
-      title: "ストグラ配信(あいまいみー)",
-      playlistId: "PLxxxxxxxxxxxxxxx",
-      description: "ストグラ「あいまいみー」の衛星集！",
+      title: "ストグラSeason1(あいまいみー)",
+      playlistId: "PL4VTWL32NQTV8_Ytt6BS5y77i7ny3NodL",
+      description: "ストグラSeason1「あいまいみー」の衛星集！",
+    },
+    {
+      id: "stgr_aimaimi2",
+      title: "ストグラSeason2(あいまいみー)",
+      playlistId: "PL4VTWL32NQTU8axE3ZvyATc0y1i8dyPJ8",
+      description: "ストグラSeason2「あいまいみー」の衛星集！",
     },
     {
       id: "stgr_maaka",
       title: "ストグラ配信(マアカ・ピィ)",
-      playlistId: "PLxxxxxxxxxxxxxxx",
+      playlistId: "PL4VTWL32NQTXQScQ5AinRyt_ncjgB8tj_",
       description: "ストグラ「マアカ・ピィ」の衛星集！",
-    },
-    {
-      id: "challenge",
-      title: "チャレンジ系動画",
-      playlistId: "PLxxxxxxxxxxxxxxx",
-      description: "DTMしてみたり初めてしてみたり！",
     },
   ],
   socials: {

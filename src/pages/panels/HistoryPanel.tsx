@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import OverlayPanel from "../../components/OverlayPanel";
 import { maimuDetail } from "../../data/talentDetailMaimu";
 import { sortTimeline } from "../../data/timelineData";
@@ -14,6 +14,53 @@ export default function HistoryPanel() {
     const [selectedItem, setSelectedItem] = useState<TimelineItem | null>(
         sortedAchievements.length > 0 ? sortedAchievements[0] : null
     );
+
+    // タイムラインリストのRef
+    const timelineListWrapperRef = useRef<HTMLDivElement>(null);
+
+    // タイムラインの縦線の高さを動的に計算・更新
+    useEffect(() => {
+        const updateTimelineLineHeight = () => {
+            if (!timelineListWrapperRef.current) return;
+
+            const wrapper = timelineListWrapperRef.current;
+            const list = wrapper.querySelector('.timeline-list') as HTMLElement;
+
+            if (!list) return;
+
+            // リストの最後のアイテムの下端を基準に、必要な高さを計算
+            const listHeight = list.scrollHeight;
+            const wrapperHeight = wrapper.clientHeight;
+
+            // 縦線がリストの最後のアイテムまで届くように、負の値を計算
+            // リストが親（wrapper）に収まっていない場合は、超過分を計算
+            if (listHeight > wrapperHeight) {
+                // スクロール可能な場合、スクロール量を含める
+                const scrollBottom = listHeight - wrapperHeight;
+                const bottomValue = `-${scrollBottom}px`;
+                wrapper.style.setProperty('--timeline-bottom', bottomValue);
+            } else {
+                // リストが親に収まる場合
+                wrapper.style.setProperty('--timeline-bottom', '-100%');
+            }
+        };
+
+        // 初期計算
+        updateTimelineLineHeight();
+
+        // アイテム数変更時や画面リサイズ時に再計算
+        const observer = new ResizeObserver(() => {
+            updateTimelineLineHeight();
+        });
+
+        if (timelineListWrapperRef.current) {
+            observer.observe(timelineListWrapperRef.current);
+        }
+
+        return () => {
+            observer.disconnect();
+        };
+    }, [sortedAchievements]);
 
     // イベントタイプに応じたラベル表示
     const getEventTypeLabel = (type?: string) => {
@@ -35,7 +82,7 @@ export default function HistoryPanel() {
         <OverlayPanel title="経歴/実績">
             <div className="history-layout">
                 {/* 左側：タイムラインリスト */}
-                <div className="timeline-list-wrapper">
+                <div className="timeline-list-wrapper" ref={timelineListWrapperRef}>
                     <div className="timeline-list">
                         {sortedAchievements.map((item: TimelineItem, i: number) => (
                             <div
@@ -76,7 +123,10 @@ export default function HistoryPanel() {
                             <h3 className="timeline-detail-title">{selectedItem.title}</h3>
                             {selectedItem.note && (
                                 <div className="timeline-detail-section">
-                                    <p className="timeline-detail-note">{selectedItem.note}</p>
+                                    <div
+                                        className="timeline-detail-note"
+                                        dangerouslySetInnerHTML={{ __html: selectedItem.note }}
+                                    />
                                 </div>
                             )}
 
